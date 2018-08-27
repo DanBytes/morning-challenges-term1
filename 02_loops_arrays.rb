@@ -21,3 +21,72 @@
 # water sell for $6, and cost $0.15 to make
 
 # print out the total profit for the orders you have
+
+travel_time = 46
+
+puts "Took me #{travel_time} minutes to get to the class"
+
+#[ammount_ordered, sell_price, make_price]
+cocktails = [0, 22, 8]
+water = [0, 6, 0.15]
+beers = [0, 12, 3]
+
+customer_order = 0
+order_limit = 1
+puts "What drinks would you like to order (cocktail, water, beer)"
+while customer_order < order_limit do
+    print "> "
+    user_input = gets.chomp.upcase
+
+    case user_input
+        when "COCKTAIL"
+            cocktails[0] = cocktails[0] + 1
+            customer_order += 1
+            puts "You have ordered #{cocktails[0]} cocktails"
+            puts "Would you like to order anything else? ( y / n)"
+            user_input = gets.chomp.upcase
+
+            if (user_input == 'Y')
+                order_limit += 1
+            else
+                puts "Okay thank you for ordering"
+            end
+        
+        when "BEER"
+            beers[0] = beers[0] + 1
+            customer_order += 1
+            puts "You have ordered #{beers[0]} beers"
+            puts "Would you like to order anything else? ( y / n)"
+            user_input = gets.chomp.upcase
+
+            if (user_input == 'Y')
+                order_limit += 1
+            else
+                puts "Okay thank you for ordering"
+            end
+
+        when "WATER"
+            water[0] = water[0] + 1
+            customer_order += 1
+
+            puts "You have ordered #{water[0]} water"
+            puts "Would you like to order anything else? ( y / n)"
+            user_input = gets.chomp.upcase
+
+            if (user_input == 'Y')
+                order_limit += 1
+            else
+                puts "Okay thank you for ordering"
+            end
+        else
+            puts "I don't understand your order"
+        end
+end
+
+puts "Items ordered #{customer_order}"
+puts "Quantity: #{cocktails[0]}, Drink type: Cocktail"
+puts "Quantity: #{water[0]}, Drink type: Water"
+puts "Quantity: #{beers[0]}, Drink type: Beers"
+
+profit_made = (cocktails[1] - cocktails[2]) + (water[1] - water[2]) + (beers[1] - beers[2])
+puts "Total profit #{profit_made}"
