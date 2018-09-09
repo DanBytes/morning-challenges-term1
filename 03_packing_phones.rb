@@ -21,6 +21,7 @@
 #
 #    Keep it as simple as you can.
 
+<<<<<<< HEAD
 # Creating packaging box and phone packing with dimentions
 companyPhone = {width: 5, length: 7.4, depth: 4}
 packagingBox = {width: 32, length: 43, height: 22.1}
@@ -34,3 +35,17 @@ puts "#{width} phones fit in width"
 puts "#{length} phones fit in length"
 puts "#{height} phones fit in height"
 puts "Total phones fit in the box #{sum}"
+=======
+phone = [5, 7.4, 4]
+box = [32, 43, 22.1]
+
+max_phones = 0
+phone.permutation do |orient|
+    print orient
+    puts
+    num_phones = (box[0] / orient[0]).to_i * (box[1] / orient[1]).to_i * (box[2] / orient[2]).to_i
+    max_phones = num_phones if num_phones > max_phones
+end
+
+puts max_phones
+>>>>>>> a66f15b560d5615b416b1045b016e9e610546faf
