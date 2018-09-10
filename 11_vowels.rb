@@ -14,6 +14,33 @@
 # ruby tests/04_vowels_test.rb
 #
 
+#solution 1
+# def vowels (string)
+#   vowels = []
+  
+#   string.split('').each do |char| 
+#     case char
+
+#     when "a", "e", "i", "o", "u"
+#       vowels.push(char)
+    
+#     when "A", "E", "I", "O", "U"
+#       vowels.push(char)
+#     end
+
+#   end
+# puts vowels
+# end
+
 def vowels (string)
-  # Your code here
+  vowels = []
+
+  string.chars.each do |chars|
+    case chars
+      when "a", "e", "i", "o", "u"
+        vowels << chars
+    end
+  end
+puts vowels
 end
+vowels("Hello World")
