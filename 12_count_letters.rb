@@ -19,11 +19,12 @@ def count_letters (string)
   
   # Your code here
   string.chars.each do |char|
-    if result.has_key?(char)
-      result[char] += 1
-    else
-      result[char] = 1
-    end
-  end
+    result[char] = 1 + (result[char] || 0)
+  #   if result.has_key?(char)
+  #     result[char] += 1
+  #   else
+  #     result[char] = 1
+  #   end
+  # end
   return result # return the hash
 end
