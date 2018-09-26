@@ -28,5 +28,11 @@
 
 
 def unique (mylist)
+<<<<<<< HEAD
   return mylist | mylist
+=======
+  hash = {}
+  mylist.each { |x| hash[x] = true }
+  hash.keys
+>>>>>>> b028df5d644e116007105a13b9522c8e1282f993
 end

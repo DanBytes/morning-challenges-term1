@@ -14,6 +14,7 @@
 # ruby tests/04_vowels_test.rb
 #
 
+<<<<<<< HEAD
 #solution 1
 # def vowels (string)
 #   vowels = []
@@ -44,3 +45,8 @@ def vowels (string)
 puts vowels
 end
 vowels("Hello World")
+=======
+def vowels (string)
+  string.scan(/[aeiou]/i)
+end
+>>>>>>> b028df5d644e116007105a13b9522c8e1282f993
