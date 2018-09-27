@@ -24,5 +24,37 @@
 # # And so on...
 
 class HighScoreTable
-  # your code here
+  attr_accessor :scores
+  def initialize (limit)
+    @limit = limit
+    @scores = []
+  end
+  
+  def update(new_score)
+    @scores.push(new_score).sort!.reverse! if @scores.length < @limit
+    @scores.push(new_score).sort!.reverse!.pop() if @scores.length >= @limit
+  end
+
+  def reset
+    @scores = []
+  end
 end
+
+# highScoreTable = HighScoreTable.new(3)
+
+# p highScoreTable.scores
+
+# highScoreTable.update(33)
+# p highScoreTable.scores
+
+# highScoreTable.update(12)
+# p highScoreTable.scores
+
+# highScoreTable.update(37)
+# p highScoreTable.scores
+
+# highScoreTable.update(20)
+# p highScoreTable.scores
+
+# highScoreTable.update(24)
+# p highScoreTable.scores
