@@ -39,8 +39,8 @@ class Card
 end
 
 
-queen_of_spades = Card.new(:spades, 12)
-ten_of_clubs = Card.new(:clubs, 10)
-ace_of_diamonds = Card.new(:diamonds, 1)
+# queen_of_spades = Card.new(:spades, 12)
+# ten_of_clubs = Card.new(:clubs, 10)
+# ace_of_diamonds = Card.new(:diamonds, 1)
 
-p queen_of_spades > ten_of_clubs
+# p queen_of_spades > ten_of_clubs
