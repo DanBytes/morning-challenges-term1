@@ -15,14 +15,41 @@
 
 class CaesarCipher
   def initialize(shift)
-    #your code here
+    @shift = shift
   end
-
+  
   def encode(string)
-    #your code here
+    string.upcase!
+    for i in 0...string.length
+      next if (string[i].ord > 90) || (string[i].ord < 65)
+      
+      char_pos = string[i].ord + @shift
+      if char_pos > 90
+        string[i] = (64 + char_pos - 90).chr
+      else
+        string[i] = char_pos.chr
+      end    
+    end
+    return string
   end
   
   def decode(string)
-    #your code here
+    string.upcase!
+    for i in 0...string.length
+      next if (string[i].ord > 90) || (string[i].ord < 65)
+      
+      char_pos = string[i].ord - @shift
+      if char_pos < 65
+        string[i] = (90 - (64 - char_pos)).chr
+      else
+        string[i] = char_pos.chr
+      end    
+    end
+    return string
   end
 end
+
+#test
+cypher = CaesarCipher.new(5)
+
+puts cypher.decode("NY'X F XMNKY HNUMJW!!")
